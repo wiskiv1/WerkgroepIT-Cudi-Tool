@@ -88,4 +88,5 @@ Bij het openen van de sale tool probeert de Sale tool te verbinden met Liv (Hetz
 ![Sale_Tool_Error](/Sale_tool_Websocket_error.png)  
 
 > **Oplossing**  
-> IDK Cous, het adress veranderen? moet nog proberen
+> IDK Cous, het adress veranderen? moet nog proberen  
+> Eerst phpStorm werkende krijgen op men pc
