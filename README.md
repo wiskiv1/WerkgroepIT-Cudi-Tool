@@ -90,3 +90,23 @@ Bij het openen van de sale tool probeert de Sale tool te verbinden met Liv (Hetz
 > **Oplossing**  
 > IDK Cous, het adress veranderen? moet nog proberen  
 > Eerst phpStorm werkende krijgen op men pc
+
+Probeersels:
+
+in module > CudiBundle > Component > Controller > SaleController.php vind je de getSocketurl() functie => deze functie geeft het adress van de websocket  
+
+```
+protected function getSocketUrl()
+    {
+        return $this->getEntityManager()
+            ->getRepository('CommonBundle\Entity\General\Config')
+            ->getConfigValue('cudi.queue_socket_public');
+    }
+```
+
+miss is het mogelijk om de link naar de websocket van de lokale_litus te hardcoderen? dit zou wel geen elegante oplossing zijn, eerder quick en dirty om het snel te laten werken. ¯\\_(ツ)_/¯  
+het returnen van ```liv.localhost/websocket/cudi/``` werkt al sowieso niet.
+
+Er is de module > CudiBundle > Command > Socket > Sale.php file, maar weet niet of dit echt relevant is?
+
+Aan de andere kant zijn alle API keys , auth codes en tokens weg, kan het zijn dat we daarom niet kunnen verbinden?
