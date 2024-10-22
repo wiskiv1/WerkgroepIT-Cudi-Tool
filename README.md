@@ -104,9 +104,19 @@ protected function getSocketUrl()
     }
 ```
 
-miss is het mogelijk om de link naar de websocket van de lokale_litus te hardcoderen? dit zou wel geen elegante oplossing zijn, eerder quick en dirty om het snel te laten werken. ¯\\_(ツ)_/¯  
-het returnen van ```liv.localhost/websocket/cudi/``` werkt al sowieso niet.
+Deze functie Haalt de link voor de que websocket uit de database.  
+=> De websocket link bevindt zich in table ```general_config```  met als key ID cudi.queue_socket_public  
 
-Er is de module > CudiBundle > Command > Socket > Sale.php file, maar weet niet of dit echt relevant is?
+de table ziet er als volgt uit:
+| key | value | description | published |
+| :---: | :---: | :---: | :---: |  
+| ... | ... | ... | ... |
+|cudi.queue_socket_key| |The key used for the WebSocket of the queue|false |
+|cudi.queue_socket_public|liv.vtk.be/websocket/cudi/|The public address for the WebSocket of the queue|false | 
+| ... | ... | ... | ... | 
 
-Aan de andere kant zijn alle API keys , auth codes en tokens weg, kan het zijn dat we daarom niet kunnen verbinden?
+De waarde van ```Value``` moet aangepast worden, maar naar wat?
+
+Merk op dat de Waarde voor ```cudi.queue_socket_key``` niet ingevuld is? => kan het zijn dat de sales tool niet werkt omdat de key niet aanwezig is??  
+
+
