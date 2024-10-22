@@ -13,6 +13,7 @@ grtjs
 ## overzicht  
 
 [Sale session Error](#sales-session-error)  
+[Sale Tool Websocket](#sale-tool-websocket)  
 
 
 ## Sales session error
@@ -25,14 +26,14 @@ Bij het aanmaken van een nieuwe Sale session (Cudi > sale sessions > new), krijg
 > **Oplossing**  
 > Een dummy sale session in de database steken zodat de getCloseRegister() functie iets kan returnen  
 >
-> Database met de implementatie vindt je hier: [werkgroepDatabase_sale_session_fix](/werkgroepDatabase_Sale_Session_fix)
+> Database met de implementatie vindt je hier: [werkgroepDatabase_sale_session_fix](/werkgroepDatabase_Sale_Session_fix)  
 
 aangepaste tabellen:  
 
 cudi_sale_sessions  
 |id | open_register | close_register | manager | open_date | close_date | comment |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |   
-|1 | 1 | 2 | 25321 | 2024-10-22 16:02:44 | 2024-10-2218:02:50 | "NIET VERWIJDEREN" |
+|1 | 1 | 2 | 25321 | 2024-10-22 16:02:44 | 2024-10-22 18:02:50 | "NIET VERWIJDEREN" |
 
 general_bank_cash_registers  
 
@@ -79,3 +80,12 @@ general_bank_money_units_amounts
 
 Elke Cash register heeft 15 entries in deze tabel voor de 15 unit types
 
+## Sale tool websocket  
+**ENKEL VOOR DE WERKGROEP**
+
+Bij het openen van de sale tool probeert de Sale tool te verbinden met Liv (Hetzner) en niet je lokale websocket
+
+![Sale_Tool_Error](/Sale_tool_Websocket_error.png)  
+
+> **Oplossing**  
+> IDK Cous, het adress veranderen? moet nog proberen
